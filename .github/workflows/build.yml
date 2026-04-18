@@ -1,6 +1,8 @@
-name: Build APK
+name: Build Neuromantico APK
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -16,4 +18,11 @@ jobs:
 
       - uses: android-actions/setup-android@v3
 
-      - run: echo "Placeholder build"
+      - run: chmod +x gradlew
+
+      - run: ./gradlew assembleDebug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: neuromantico-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
