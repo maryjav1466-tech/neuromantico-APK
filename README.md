@@ -1,111 +1,113 @@
-# Jetpack Compose Samples
-<img src="readme/samples_montage.gif" alt="Jetpack Compose Samples" width="824" />
+# Jetnews sample
+Jetnews is a sample news reading app, built with
+[Jetpack Compose](https://developer.android.com/jetpack/compose). The goal of the sample is to
+showcase the current UI capabilities of Compose.
 
-This repository contains a set of individual Android Studio projects to help you learn about
-Compose in Android. Each sample demonstrates different use cases, complexity levels and APIs.
-
-For more information, please [read the documentation](https://developer.android.com/jetpack/compose).
-
-💻 Requirements
-------------
-To try out these sample apps, you need to use [Android Studio](https://developer.android.com/studio).
+To try out this sample app, use the latest stable version
+of [Android Studio](https://developer.android.com/studio).
 You can clone this repository or import the
 project from Android Studio following the steps
 [here](https://developer.android.com/jetpack/compose/setup#sample).
 
-🧬 Samples
-------------
+## Screenshots
 
-| Project | |
-|:-----|---------|
-|  <br><img src="readme/jetnews.png" alt="JetNews" width="240"></img> <br><br> A sample blog post viewer that demonstrates the use of Compose with a typical Material app and real-world architecture. <br><br> • Medium complexity<br>• Varied UI<br>• Light & dark themes<br>• Resource loading<br>• UI Testing <br><br> **[> Browse](JetNews/)**<br><br> | <img src="readme/screenshots/JetNews.png" width="320" alt="Jetnews sample demo"> |
-|  |  |
-|  <br><img src="readme/jetchat.png" alt="Jetchat" width="240"></img> <br><br>A sample chat app that focuses on UI state patterns and text input.<br><br>• Low complexity<br>• Material Design 3 theme and Material You dynamic color<br>• Resource loading<br>• Back button handling<br>• Integration with Architecture Components: Navigation, Fragments, LiveData, ViewModel<br>• Animation<br>• UI Testing<br><br>**[> Browse](Jetchat/)** <br><br> | <img src="readme/screenshots/Jetchat.png" width="320" alt="Jetchat sample demo">|
-|  |  |
-| <br><img src="readme/jetsnack.png" alt="Jetsnack" width="240"></img> <br><br>Jetsnack is a sample snack ordering app built with Compose.<br><br>• Medium complexity<br>• Custom design system<br>• Custom layouts<br>• Animation<br><br>**[> Browse](Jetsnack/)** <br><br>  | <img src="readme/screenshots/Jetsnack.png" width="320" alt="Jetsnack sample demo">|
-|  |  |
-| <br><img src="readme/jetcaster.png" alt="Jetcaster" width="240"></img> <br><br>A sample podcast app that features a full-featured, Redux-style architecture and showcases dynamic themes.<br><br>• Advanced sample<br>• Dynamic theming using podcast artwork<br>• Image fetching<br>• [`WindowInsets`](https://developer.android.com/reference/kotlin/android/view/WindowInsets) support<br>• Coroutines<br>• Local storage with Room<br><br>**[> Browse](Jetcaster/)** <br><br>  | <img src="readme/screenshots/Jetcaster.png" width="320" alt="Jetcaster sample demo">|
-|  |  |
-| <br><img src="readme/reply.png" alt="Reply" width="240"></img>  <br><br>A compose implementation of the Reply material study, an email client app that focuses on adaptive design for mobile, tablets and foldables. It also showcases brand new Material design 3 theming, dynamic colors and navigation components.<br><br>• Medium complexity<br>• Adaptive UI for phones, tablet and desktops<br>• Foldable support<br>• Material 3 theming & Components<br>• Dynamic colors and Light/Dark theme support<br><br>**[> Browse](Reply/)** <br><br>  | <img src="readme/screenshots/Reply.png" width="320" alt="Reply sample demo">|
-|  |  |
-| <br><img src="readme/jetlagged_heading.png" alt="JetLagged" width="240"></img>  <br><br>A sample sleep tracker app, showcasing how to create custom layouts and graphics in Compose<br><br>• Custom Layouts<br>• Graphs with Paths<br><br>**[> Browse](JetLagged/)** <br><br>  | <img src="JetLagged/screenshots/JetLagged_Full.png" width="320" alt="JetLagged sample demo">|
+<img src="screenshots/screenshots.png" alt="Screenshot">
 
-🧬 Additional samples
-------------
+## Features
 
-| Project | |
-|:-----|---------|
-| <br><img src="readme/nia.png" alt="Now in Android" width="240"></img>  <br><br>An app for keeping up to date with the latest news and developments in Android.<br><br>• [Jetpack Compose](https://developer.android.com/jetpack/compose) first app.<br>• Implements the recommended Android [Architecture Guidelines](https://developer.android.com/topic/architecture) <br>• Integrates [Jetpack Libraries](https://developer.android.com/jetpack) holistically in the context of a real world app<br><br><a href="https://play.google.com/store/apps/details?id=com.google.samples.apps.nowinandroid"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="70"></a><br>**[> Browse](https://github.com/android/nowinandroid)** <br><br>  | <img src="readme/screenshots/NiA.png" width="320" alt="Now In Android Github Repository">|
-|  |  |
-| <br><img src="readme/material_catalog.png" alt="Material Catalog" width="240"></img>  <br><br>A catalog of Material Design components and features available in Jetpack Compose. See how to implement them and how they look and behave on real devices.<br><br>• Lives in AOSP—always up to date<br>• Uses the same samples as API reference docs<br>• Theme picker to change Material Theming values at runtime<br>• Links to guidelines, docs, source code, and issue tracker<br><br><a href="https://play.google.com/store/apps/details?id=androidx.compose.material.catalog"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="70"></a><br>**[> Browse on AOSP](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/integration-tests/material-catalog)** <br><br>  | <img src="readme/screenshots/Material_Catalog.png" width="320" alt="Material Catalog sample demo">|
+This sample contains three screens: a list of posts, a detail page for a post, and a page to
+subscribe to topics of interest. The navigation from the list of posts to the interests
+screen uses a navigation drawer.
 
+### App scaffolding
 
-## High level features 
+Package [`com.example.jetnews.ui`][1]
 
-Looking for a sample that has the following features?
+[`JetnewsApp.kt`][2] sets up the app's navigation state and the modal drawer used for navigation
+on smaller windows.
 
-### Custom Layouts
-* [Jetnews: Interests Screen](https://github.com/android/compose-samples/blob/ee198110d8a7575da281de9bd0f84e91970468ca/JetNews/app/src/main/java/com/example/jetnews/ui/interests/InterestsScreen.kt#L428)
-* [Jetchat: AnimatedFabContent](https://github.com/android/compose-samples/blob/ee198110d8a7575da281de9bd0f84e91970468ca/Jetchat/app/src/main/java/com/example/compose/jetchat/components/AnimatingFabContent.kt#L101)
-* [Jetsnack: Grid](https://github.com/android/compose-samples/blob/73d7f25815e6936e0e815ce975905a6f10744c36/Jetsnack/app/src/main/java/com/example/jetsnack/ui/components/Grid.kt#L27)
-* [Jetsnack: CollapsingImageLayout](https://github.com/android/compose-samples/blob/main/Jetsnack/app/src/main/java/com/example/jetsnack/ui/snackdetail/SnackDetail.kt)
+[`JetnewsNavDisplay.kt`][3] displays the primary content of the app: the list of posts, the
+posts themselves, and the interests page. It uses a list-detail scene strategy to adaptively
+display more or less content depending on the window size.
 
-### Theming
-* [Jetchat: Material3](https://github.com/android/compose-samples/blob/main/Jetchat/app/src/main/java/com/example/compose/jetchat/theme/Themes.kt#L91)
-* [Jetcaster: Custom theme based on cover art](https://github.com/android/compose-samples/blob/main/Jetcaster/app/src/main/java/com/example/jetcaster/util/DynamicTheming.kt)
-* [Jetsnack: Custom Design System](https://github.com/android/compose-samples/blob/main/Jetsnack/app/src/main/java/com/example/jetsnack/ui/theme/Theme.kt)
+<img src="screenshots/jetnews_all_screens.png" alt="Screenshot">
 
-### Animations
-* [Jetsurvey: AnimatedContent](https://github.com/android/compose-samples/pull/842)
-* [Jetcaster: Animated theme colors](https://github.com/android/compose-samples/blob/69e9d862b5ffb321064364d7883e859db6daeccd/Jetcaster/app/src/main/java/com/example/jetcaster/util/DynamicTheming.kt)
-* [Jetsnack: Animating Bottom Barl](https://github.com/android/compose-samples/blob/main/Jetsnack/app/src/main/java/com/example/jetsnack/ui/home/Home.kt)
+[1]: app/src/main/java/com/example/jetnews/ui
+[2]: app/src/main/java/com/example/jetnews/ui/JetnewsApp.kt
+[3]: app/src/main/java/com/example/jetnews/ui/JetnewsNavDisplay.kt
 
-### Text
-* [Jetchat: Downloadable Fonts](https://github.com/android/compose-samples/pull/787)
+### Main post list
 
-### Large Screens
-* [Jetcaster - Supporting Pane](https://github.com/android/compose-samples/blob/3dbbf0912b57dacefcfb79191a2d7d6b053dadb8/Jetcaster/app/src/main/java/com/example/jetcaster/ui/home/Home.kt#L282)
-* [Jetnews - Window Size Classes](https://github.com/android/compose-samples/blob/69e9d862b5ffb321064364d7883e859db6daeccd/JetNews/app/src/main/java/com/example/jetnews/ui/MainActivity.kt#L36)
+Package [`com.example.jetnews.ui.home`][4]
 
-### TV
-* [Jetcaster - TV](https://github.com/android/compose-samples/tree/3dbbf0912b57dacefcfb79191a2d7d6b053dadb8/Jetcaster/tv-app)
+This screen shows how to create different custom Composable functions and combine them in a list
+that scrolls vertically and horizontally.
 
-### Wear
-* [Jetcaster - Wear](https://github.com/android/compose-samples/tree/3dbbf0912b57dacefcfb79191a2d7d6b053dadb8/Jetcaster/wear)
+See how to:
 
-## Formatting
+* Use `Row`s and `Column`s to arrange the contents of the UI
+* Add a top app bar that elevates as the user scrolls
+* Use Material's `Typography` and `ColorScheme` to style the text
+* Use tonal elevation to make the `Card`s stand out from the background
 
-To automatically format all samples: Run `./scripts/format.sh`
-To check one sample for errors: Navigate to the sample folder and run `./gradlew spotlessCheck`
-To format one sample: Navigate to the sample folder and run `./gradlew spotlessApply`
+[4]: app/src/main/java/com/example/jetnews/ui/home
 
-## Updates
+### Post detail
 
-To update dependencies to their new stable versions, run:
+Package [`com.example.jetnews.ui.post`][5]
 
-```
-./scripts/updateDeps.sh
-```
+This screen dives into the Text API, showing how to use different fonts than the ones defined in
+[`Typography`][6]. It also adds a bottom app bar, with custom actions.
 
-Any other version updates need to be made individually.
+[5]: app/src/main/java/com/example/jetnews/ui/post
+[6]: app/src/main/java/com/example/jetnews/ui/theme/Type.kt
 
-## Obsolete Sample Projects
+### Interests screen
 
-Over time some of our samples become a little stale and are removed to keep the
-repository easy to navigate. If you are curious you can still find them in the 
-history, however if you are new you might be better served sticking to
-the most up to date resources.
+Package [`com.example.jetnews.ui.interests`][7]
 
-| Project                                          | Removed    | Commit                                                              |
-| ------------------------------------------------ | -----------|-------------------------------------------------------------------- |
-| [Crane](../../tree/v2024.05.00/Crane)         | 2024-08-02 | [ee8e272](../../commit/ee8e27289f4bc36304ee9f04397f49c35f402a65) |
-| [Owl](../../tree/v2024.05.00/Owl)             | 2024-08-02 | [ee8e272](../../commit/ee8e27289f4bc36304ee9f04397f49c35f402a65) |
-| [Jetsurvey](../../tree/v2024.05.00/Jetsurvey) | 2024-08-02 | [ee8e272](../../commit/ee8e27289f4bc36304ee9f04397f49c35f402a65) |
-| [Rally](../../tree/v2024.05.00/Rally)         | 2024-08-02 | [ee8e272](../../commit/ee8e27289f4bc36304ee9f04397f49c35f402a65) |
+This screens shows how to use Tabs and switch content depending on the selected tab. It
+also includes a custom checkbox button, [SelectTopicButton][8]
+that uses a `Toggleable` composable function to provide
+the on/off behaviour and semantics, while drawing a custom UI. The UI of the button is partly
+drawn with low-level primitives and partly overlaying images. See also how to visualize
+on and off, light and dark version in the Android Studio Preview.
+
+[7]: app/src/main/java/com/example/jetnews/ui/interests
+[8]: app/src/main/java/com/example/jetnews/ui/interests/SelectTopicButton.kt
+
+### AppWidget powered by Glance
+
+Package [`com.example.jetnews.glance`][9]
+
+This package shows how to use Glance and write compose style code for AppWidgets.
+
+See how to:
+* Use `Row`, `Column`, `LazyColumn` to arrange the contents of the UI
+* Use a repository from your existing app to load data for the widget and perform updates
+* Configure `android:updatePeriodMillis` to periodically refresh the widget
+* Use `androidx.glance:glance-material3` library to create a custom color scheme with `GlanceTheme`
+and use dynamic colors when supported
+* Tint `Image`s to match the color scheme
+* Launch an activity on click using `actionStartActivity`
+
+[9]: app/src/main/java/com/example/jetnews/glance
+
+### Data
+
+The data in the sample is static, held in the `com.example.jetnews.data` package.
+
+### Instrumented and Robolectric tests
+
+UI tests can be run on device/emulators or on JVM with Robolectric.
+
+* To run Instrumented tests use the "Instrumented tests" run configuration or run the `./gradlew connectedCheck` command.
+* To run tests with Robolectric use the "Robolectric tests" run configuration or run the `./gradlew testDebug` command.
 
 ## License
+
 ```
-Copyright 2024 The Android Open Source Project
+Copyright 2021 The Android Open Source Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
